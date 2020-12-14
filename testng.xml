@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TestSuite" thread-count="2" parallel="tests">
+	<listeners>
+		<listener
+			class-name="com.atmecs.assessment.openmrs.report.CustomReport" />
+	</listeners>
+	<test name="ChromeTest" parallel="methods" thread-count="2">
+		<parameter name="browser" value="Chrome" />
+		<classes>
+			<class
+				name="com.atmecs.assessment.openmrs.test.ValidatePatient" />
+			<class
+				name="com.atmecs.assessment.openmrs.test.MergePatientRecords" />
+		</classes>
+	</test>
+	<test name="FireFoxTest" parallel="methods" thread-count="2">
+		<parameter name="browser" value="Firefox" />
+		<classes>
+			<class
+				name="com.atmecs.assessment.openmrs.test.ValidatePatient" />
+			<class
+				name="com.atmecs.assessment.openmrs.test.MergePatientRecords" />
+
+		</classes>
+	</test>
+
+</suite> 
